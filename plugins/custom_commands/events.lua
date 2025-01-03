@@ -3,11 +3,10 @@ AddEventHandler("OnPluginStart", function(event)
     logger:Write(LogType_t.Info, "Custom Commands Plugin Loaded!")
 end)
 
-AddEventHandler("OnPlayerChat", function(event)
-    local player = event:GetPlayer()
-    local message = event:GetMessage()
+AddEventHandler("OnClientChat", function(event, playerid, text, teamonly)
+    local player = GetPlayer(playerid)
 
-    if HandleCustomCommands(player, message) then
-        event:Block() -- Previne afișarea normală a mesajului în chat
+    if HandleCustomCommands(player, text) then
+        event:SetReturn(false)
     end
 end)
