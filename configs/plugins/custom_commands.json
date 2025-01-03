@@ -1,17 +1,20 @@
 {
-    "prefix": "[{lime}Swiftly{default}]",
-    "custom_commands": {
-        "!discord": {
-            "message": "Alătură-te serverului nostru de Discord: https://discord.gg/exemplu",
+    "prefix": "{darkred}CS2{default}",
+    "custom_commands": [
+        {
+            "command": "!test",
+            "message": "Acesta este un mesaj de test pentru custom commands.",
             "send_to_all": false
         },
-        "!rules": {
-            "message": "Regulile serverului: 1. Nu face spam. 2. Respectă toți jucătorii.",
+        {
+            "command": "!test2",
+            "message": "Acesta este un mesaj de test pentru custom commands.",
             "send_to_all": true
         },
-        "!vip": {
-            "message": "Pentru a deveni VIP, vizitează: https://exemplu.com/vip",
+        {
+            "command": "!test3",
+            "message": "Acesta este un mesaj de test pentru custom commands.",
             "send_to_all": false
         }
-    }
+    ]
 }
