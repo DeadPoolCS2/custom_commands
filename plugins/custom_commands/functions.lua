@@ -1,26 +1,28 @@
 local QueuedCommands = {}
 
 function LoadCustomCommands()
-    local config = LoadConfig("custom_commands.json") -- Încărcăm noul fișier JSON
-    if not config then
-        logger:Write(LogType_t.Error, "Custom Commands: Failed to load custom_commands.json.")
-        return
-    end
+    local customCommands = config:Fetch("custom_commands.custom_commands")
 
-    local customCommands = config["custom_commands"]
     if not customCommands or type(customCommands) ~= "table" then
         logger:Write(LogType_t.Error, "Custom Commands: No valid commands found in the configuration file.")
         return
     end
 
-    for command, data in pairs(customCommands) do
-        if type(data) == "table" and data.message then
-            table.insert(QueuedCommands, { 
-                command = command, 
-                response = data.message, 
-                send_to_all = data.send_to_all or false 
-            })
+    for i = 1, #customCommands do
+        local cmdData = customCommands[i]
+        
+        if not cmdData.command or not cmdData.message then
+            logger:Write(LogType_t.Error, string.format("Couldn't load custom command #%d because 'command' or 'message' is missing.", i))
+            goto loopContinue
         end
+
+        table.insert(QueuedCommands, {
+            command = cmdData.command,
+            response = cmdData.message,
+            send_to_all = cmdData.send_to_all or false
+        })
+
+        ::loopContinue::
     end
 
     logger:Write(LogType_t.Info, "Loaded " .. #QueuedCommands .. " custom commands.")
@@ -29,7 +31,7 @@ end
 function HandleCustomCommands(player, message)
     for i = 1, #QueuedCommands do
         if QueuedCommands[i].command == message then
-            local formattedMessage = config["prefix"] .. " " .. QueuedCommands[i].response
+            local formattedMessage = config:Fetch("custom_commands.prefix") .. " " .. QueuedCommands[i].response
 
             if QueuedCommands[i].send_to_all then
                 SendCustomCommandToAll(formattedMessage)
