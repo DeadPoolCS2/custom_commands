@@ -12,10 +12,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/downloads/swiftly-solution/swiftly_pluginname/total" alt="Downloads"> 
-  <img src="https://img.shields.io/github/contributors/swiftly-solution/swiftly_pluginname?color=dark-green" alt="Contributors">
-  <img src="https://img.shields.io/github/issues/swiftly-solution/swiftly_pluginname" alt="Issues">
-  <img src="https://img.shields.io/github/license/swiftly-solution/swiftly_pluginname" alt="License">
+  <img src="https://img.shields.io/github/downloads/DeadPoolCS2/custom_commands/total" alt="Downloads"> 
+  <img src="https://img.shields.io/github/contributors/DeadPoolCS2/custom_commands?color=dark-green" alt="Contributors">
+  <img src="https://img.shields.io/github/issues/DeadPoolCS2/custom_commands" alt="Issues">
+  <img src="https://img.shields.io/github/license/DeadPoolCS2/custom_commands" alt="License">
 </p>
 
 ---
