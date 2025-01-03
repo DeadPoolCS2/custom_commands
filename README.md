@@ -27,7 +27,7 @@
 
 ### Configuring the plugin 🧐
 
-* After installing the plugin, you can change the messages and the prefix from the config file: /game/csgo/addons/swiftly/configs/plugins/custom_commands.json
+* After installing the plugin, you can change the messages from the config file: /game/csgo/addons/swiftly/configs/plugins/custom_commands.json
 
 ### Creating A Pull Request 😃
 
