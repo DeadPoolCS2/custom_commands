@@ -1,0 +1,17 @@
+{
+    "prefix": "[{lime}Swiftly{default}]",
+    "custom_commands": {
+        "!discord": {
+            "message": "Alătură-te serverului nostru de Discord: https://discord.gg/exemplu",
+            "send_to_all": false
+        },
+        "!rules": {
+            "message": "Regulile serverului: 1. Nu face spam. 2. Respectă toți jucătorii.",
+            "send_to_all": true
+        },
+        "!vip": {
+            "message": "Pentru a deveni VIP, vizitează: https://exemplu.com/vip",
+            "send_to_all": false
+        }
+    }
+}
