@@ -11,5 +11,5 @@ function GetPluginName()
 end
 
 function GetPluginWebsite()
-    return "https://github.com/swiftly-solution/custom-commands"
+    return "https://github.com/DeadPoolCS2/custom_commands"
 end
